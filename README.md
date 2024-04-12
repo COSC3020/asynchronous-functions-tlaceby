@@ -1,4 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/26dp6wek)
+
 # Asynchronicity
 
 Implement a function that takes an array and a key to search for and counts the
@@ -16,6 +17,10 @@ the function and run automatically when you commit through a GitHub action.
 
 The [async library](https://caolan.github.io/async/v3/) may be helpful with
 this.
+
+**Implimentation**
+
+I will be using the Go programming language as I have been doing alot of work in that language recently and want to get better with channels. So I am using that along with Go's builtin testing library.
 
 ## Runtime Analysis
 
