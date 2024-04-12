@@ -26,3 +26,14 @@ I will be using the Go programming language as I have been doing alot of work in
 
 What is the time complexity of your implementation (worst-case $\Theta$)? Add
 your answer, including your reasoning, to this markdown file.
+
+## Resources
+
+I had a hard time grasping channels at first. Here is a good website which has a series of diferent pages you can view which contain some code and a brief explaination. I also watched a few youtube videos on the topic.
+https://gobyexample.com/closing-channels
+
+For number generation I utilized this code snippet to get me a range of random integers.
+https://stackoverflow.com/questions/23577091/generating-random-numbers-over-a-range-in-go
+
+I used this testing code snippet for help with generating tests
+https://www.digitalocean.com/community/tutorials/how-to-write-unit-tests-in-go-using-go-test-and-the-testing-package

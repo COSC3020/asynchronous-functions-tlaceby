@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func countTask(array []int, start, end, key int, counts chan int) {
+func countTask(array []int, start, end, key int, countsChannel chan int) {
 	count := 0
 
 	for i := start; i <= end; i++ {
@@ -14,11 +14,14 @@ func countTask(array []int, start, end, key int, counts chan int) {
 		}
 	}
 
-	// add count into the channel
-	counts <- count
+	countsChannel <- count
 }
 
-func parallelCountMatches(array []int, key, threadCount int) int {
+func countMatches(array []int, key, threadCount int) int {
+	if threadCount <= 0 {
+		return -1
+	}
+
 	wg := sync.WaitGroup{}
 	countsCh := make(chan int, threadCount)
 	chunkSize := len(array) / threadCount
@@ -52,6 +55,6 @@ func parallelCountMatches(array []int, key, threadCount int) int {
 func main() {
 	arr := []int{1, 2, 5, 5, 4, 2, 3, 4, 2, 3, 2, 1, 2}
 
-	count := parallelCountMatches(arr, 5, 100)
+	count := countMatches(arr, 1, 5)
 	fmt.Printf("Number of matches: %d\n", count)
 }
