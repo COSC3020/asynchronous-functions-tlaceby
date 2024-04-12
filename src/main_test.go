@@ -31,10 +31,10 @@ func TestNoThreads(t *testing.T) {
 
 func TestRandomArrays(t *testing.T) {
 	// Generate 100 tests and run them
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 1000; i++ {
 		threadCount := randRange(1, 10) // betweeen 1 and 10 threads
 		expected := randRange(1, 10)    // expected number is between 1 and 10
-		size := randRange(25, 100)      // the size will vary from 25 to 100 random numbers
+		size := randRange(100, 1000)    // the size will vary from 100 to 1000 random numbers
 		arr := make([]int, size)
 		want := 0 // number of expected which was generated
 
@@ -47,6 +47,7 @@ func TestRandomArrays(t *testing.T) {
 			}
 		}
 
-		assert(countMatches(arr, expected, threadCount), want, t)
+		got := countMatches(arr, expected, threadCount)
+		assert(got, want, t)
 	}
 }
